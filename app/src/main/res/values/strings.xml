@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Just Math</string>
+    <string name="addition">Addition</string>
+    <string name="subtraction">Subtraction</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="division">Division</string>
+    <string name="ok">ok</string>
+</resources>
