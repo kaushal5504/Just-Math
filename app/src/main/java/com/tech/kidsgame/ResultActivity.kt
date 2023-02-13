@@ -1,5 +1,9 @@
 package com.tech.kidsgame
 
+import android.app.AlertDialog
+import android.app.Dialog
+import android.app.Dialog.*
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,10 +33,28 @@ class ResultActivity : AppCompatActivity() {
         }
         exit.setOnClickListener {
 
-            val intent = Intent(Intent.ACTION_MAIN)
-            intent.addCategory(Intent.CATEGORY_HOME)
-            intent.flags= Intent.FLAG_ACTIVITY_NEW_TASK
-            startActivity(intent)
+
+            var alertDialog = AlertDialog.Builder(this@ResultActivity)
+            alertDialog.setTitle("EXIT")
+                .setMessage("Do you want to exit")
+
+                .setCancelable(false)
+                .setNegativeButton("NO", DialogInterface.OnClickListener { dialogInterface, which ->
+                    dialogInterface.cancel()
+                })
+                .setPositiveButton("yes", DialogInterface.OnClickListener { dialogInterface, which ->
+                    val intent = Intent(Intent.ACTION_MAIN)
+                    intent.addCategory(Intent.CATEGORY_HOME)
+                    intent.flags= Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intent)
+                    //   exitProcess(0)
+                })
+
+            alertDialog.create().show()
+
+
+
+
         }
     }
 }
