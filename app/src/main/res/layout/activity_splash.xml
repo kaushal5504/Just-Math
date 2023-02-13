@@ -7,20 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center_horizontal"
+    android:background="@color/grey">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/icon2" />
+        app:srcCompat="@drawable/icon2"
+        android:background="@drawable/new_button"
+        android:padding="10dp"
+        android:layout_marginTop="80dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="play to learn....."
+        android:text="Play to learn....."
         android:textSize="35sp"
         android:gravity="center"
+        android:textStyle="italic|bold"
+        android:textColor="@color/white"
         android:layout_margin="20dp"
+        android:layout_marginTop="100dp"
         />
 </LinearLayout>
